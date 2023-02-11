@@ -11,24 +11,6 @@ import * as THREE from "three";
 import { Car } from "./Car";
 
 const Three = () => {
-  
-  // const orbitControlsRef = useRef(null);
-  // useFrame((state) => {
-  //   if (!!orbitControlsRef.current) {
-  //     const { x, y } = state.mouse;
-  //     orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadian(45));
-  //     orbitControlsRef.current.setPolarAngle(
-  //       (y + 0.5) * angleToRadian(90 - 30)
-  //     );
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   if (!!orbitControlsRef.current) {
-  //     console.log("Three ~ orbitControlsRef.current", orbitControlsRef.current);
-  //   }
-  // }, [orbitControlsRef.current]);
-  
   const ballRef = useRef(null);
   useEffect(() => {
     if (!!ballRef.current) {
@@ -41,6 +23,7 @@ const Three = () => {
         x: 1,
         duration: 3,
       });
+
       timeline.to(ballRef.current.position, {
         y: 0.5,
         duration: 3,
@@ -76,9 +59,6 @@ const Three = () => {
         <planeGeometry args={[20, 20]} />
         <meshStandardMaterial color={"#f0f0f0"} />
       </mesh>
-
-      {/* Ambient Light */}
-      {/* <ambientLight args={["#ffffff", 1]} /> */}
 
       {/* Directional light */}
       <spotLight
